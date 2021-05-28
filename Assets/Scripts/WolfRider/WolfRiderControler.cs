@@ -13,6 +13,7 @@ public class WolfRiderControler : MonoBehaviour
     private StatisticsController Statistics;
     private State EnemyState;
 
+    private PlayerGui Gui;
     public float walk_Speed = 0.5f;
     public float run_Speed = 4f;
 
@@ -39,6 +40,7 @@ public class WolfRiderControler : MonoBehaviour
 
 
         target = GameObject.FindWithTag("Player").transform;
+        Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
     }
 
     void Start() {
@@ -148,7 +150,7 @@ public class WolfRiderControler : MonoBehaviour
         navAgent.isStopped = true;
         attack_Timer += Time.deltaTime;
 
-        Debug.Log(DuringAttack);
+        //Debug.Log(DuringAttack);
 
         if(Vector3.Distance(transform.position, target.position)
                              > attack_distance + chase_after_attack_distance 
@@ -169,7 +171,7 @@ public class WolfRiderControler : MonoBehaviour
     }//attack
 
     public void EndAttack(){
-        Debug.Log("endatt");
+        //Debug.Log("endatt");
         DuringAttack = false;
     }
 
@@ -188,4 +190,13 @@ public class WolfRiderControler : MonoBehaviour
         navAgent.SetDestination(navHit.position);
     }
 
+    void OnMouseOver()
+    {
+        Gui.ShowEnemyHP(Statistics);
+    }
+
+    void OnMouseExit()
+    {
+        Gui.EndShowEnemyHP();
+    }
 }

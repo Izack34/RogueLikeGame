@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PlayerControler : MonoBehaviour
 {
     public Camera Cam;
-    RaycastHit hit;
+    public RaycastHit hit;
     public NavMeshAgent Agent;
     private AnimController PlayerAnimator;
 
@@ -17,6 +17,7 @@ public class PlayerControler : MonoBehaviour
     public float camX;
 
     public float camY;
+    
 
     private Vector3 point;
     public bool during_attack = false;
@@ -39,7 +40,7 @@ public class PlayerControler : MonoBehaviour
                 if(Vector3.Distance(transform.position, hit.point) <= 3){
                     Agent.velocity = Vector3.zero;
                     Agent.isStopped = true;
-                    Debug.Log(Statistics.melee_damage());
+                    //Debug.Log(Statistics.melee_damage());
                     hit.transform.gameObject.GetComponent<StatisticsController>().take_PhysicalDamage(Statistics.melee_damage());
                     RotateTowards(hit.transform);
                     meleeAttack();

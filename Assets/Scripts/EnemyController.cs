@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private EnemyAnim enemy_animator;
     private NavMeshAgent navAgent;
 
+    private PlayerGui Gui;
+
     private State EnemyState;
 
     public float walk_Speed = 0.5f;
@@ -40,8 +42,10 @@ public class EnemyController : MonoBehaviour
         enemy_animator = GetComponent<EnemyAnim>();
         navAgent = GetComponent<NavMeshAgent>();
         Statistics = GetComponent<StatisticsController>();
+        
 
         target = GameObject.FindWithTag("Player").transform;
+        Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
     }
 
     void Start() {
@@ -170,6 +174,7 @@ public class EnemyController : MonoBehaviour
         }
     }//attack
 
+    
     public void EndAttack(){
         //Debug.Log("endatt");
         DuringAttack = false;
@@ -189,5 +194,13 @@ public class EnemyController : MonoBehaviour
 
         navAgent.SetDestination(navHit.position);
     }
+    void OnMouseOver()
+    {
+        Gui.ShowEnemyHP(Statistics);
+    }
 
+    void OnMouseExit()
+    {
+        Gui.EndShowEnemyHP();
+    }
 }

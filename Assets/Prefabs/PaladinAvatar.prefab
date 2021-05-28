@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
   Agent: {fileID: 1030884409931606396}
-  camX: -12
-  camY: -12
+  camX: -10
+  camY: -10
   during_attack: 0
 --- !u!114 &1030884409931606368
 MonoBehaviour:
@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5930651934207234998, guid: 7bf201eb93a64ab47857ce81b796a258, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2075f2a34c35c842a3034adb86f2f7e, type: 2}
     - target: {fileID: 5930651934574333953, guid: 7bf201eb93a64ab47857ce81b796a258, type: 3}
       propertyPath: m_Layer
       value: 2

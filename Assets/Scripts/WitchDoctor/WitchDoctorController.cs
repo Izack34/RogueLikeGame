@@ -13,6 +13,8 @@ public class WitchDoctorController : MonoBehaviour
 
     private StatisticsController Statistics;
 
+    private PlayerGui Gui;
+
     public float walk_Speed = 0.5f;
     public float run_Speed = 4f;
 
@@ -40,6 +42,7 @@ public class WitchDoctorController : MonoBehaviour
         Statistics = GetComponent<StatisticsController>();
 
         target = GameObject.FindWithTag("Player").transform;
+        Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
     }
 
     void Start() {
@@ -201,5 +204,14 @@ public class WitchDoctorController : MonoBehaviour
         NavMesh.SamplePosition(randDir, out navHit, rand_Radius, -1);
 
         navAgent.SetDestination(navHit.position);
+    }
+    void OnMouseOver()
+    {
+        Gui.ShowEnemyHP(Statistics);
+    }
+
+    void OnMouseExit()
+    {
+        Gui.EndShowEnemyHP();
     }
 }
