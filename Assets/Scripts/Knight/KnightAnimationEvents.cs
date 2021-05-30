@@ -5,7 +5,8 @@ using UnityEngine;
 public class KnightAnimationEvents : MonoBehaviour
 {
     [SerializeField]
-    private EnemyController EnemyControler;
+    private KnightControler EnemyControler;
+
     public void Attackend(){
         EnemyControler.EndAttack();
     }

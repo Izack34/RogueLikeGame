@@ -203,9 +203,9 @@ GameObject:
   - component: {fileID: 5077938936724547280}
   - component: {fileID: 5077938936724547281}
   - component: {fileID: 5149170273938913045}
-  - component: {fileID: 5077938936724547283}
-  - component: {fileID: 2658581612665414757}
   - component: {fileID: 6754544879315158271}
+  - component: {fileID: 745774359}
+  - component: {fileID: 745774360}
   m_Layer: 0
   m_Name: EnemyKnight
   m_TagString: Enemy
@@ -264,41 +264,6 @@ CapsuleCollider:
   m_Height: 1.8800979
   m_Direction: 1
   m_Center: {x: -0.033012033, y: 0.73854065, z: -0.07651234}
---- !u!114 &5077938936724547283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5077938936724547286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 375ac7fe812802c40b47d8dd728cff9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walk_Speed: 1.5
-  run_Speed: 5
-  chase_Distance: 20
-  current_chase_distance: 1.2
-  attack_distance: 1.5
-  chase_after_attack_distance: 1.5
-  patrol_rad_Min: 10
-  patrol_rad_Max: 30
-  patrol_for_this_Time: 15
-  wait_Before_Attack: 2
---- !u!114 &2658581612665414757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5077938936724547286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b66e62f5ce4f58443842e18117cafe09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 5077938938052541130}
 --- !u!114 &6754544879315158271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +290,41 @@ MonoBehaviour:
   strength: 100
   agility: 100
   inteligence: 100
+--- !u!114 &745774359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077938936724547286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e978f6acbe8a3498d47f0589774f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5077938938052541130}
+--- !u!114 &745774360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5077938936724547286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f3cf36c4603c84391bdf8db443cff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walk_Speed: 2
+  run_Speed: 5
+  chase_Distance: 20
+  current_chase_distance: 1.8
+  attack_distance: 1.8
+  chase_after_attack_distance: 2
+  patrol_rad_Min: 20
+  patrol_rad_Max: 60
+  patrol_for_this_Time: 15
+  wait_Before_Attack: 1
 --- !u!114 &2049729214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fd834b1302019b40a1bea3b9fed882e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyControler: {fileID: 5077938936724547283}
+  EnemyControler: {fileID: 745774360}
 --- !u!1 &5077938938432524610
 GameObject:
   m_ObjectHideFlags: 0

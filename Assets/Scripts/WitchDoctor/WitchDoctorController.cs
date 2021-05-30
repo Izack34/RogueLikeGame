@@ -41,6 +41,7 @@ public class WitchDoctorController : MonoBehaviour
         Spells = GetComponent<WitchDoctorSpells>();
         Statistics = GetComponent<StatisticsController>();
 
+        Statistics.DieDelegate += OnDie;
         target = GameObject.FindWithTag("Player").transform;
         Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
     }
@@ -205,6 +206,16 @@ public class WitchDoctorController : MonoBehaviour
 
         navAgent.SetDestination(navHit.position);
     }
+
+    public void OnDie(){
+        DuringAttack = true;
+        navAgent.isStopped = true;
+        //Debug.Log("delegate works");
+        enemy_animator.Dead(true);
+        Destroy(gameObject,3f);
+    }
+
+
     void OnMouseOver()
     {
         Gui.ShowEnemyHP(Statistics);

@@ -20,4 +20,8 @@ public class WitchDoctorAnimator : MonoBehaviour
     public void Skill(){
         animator.SetTrigger("Skill");
     }
+
+    public void Dead(bool d){
+        animator.SetBool("Dead", d);
+    }
 }

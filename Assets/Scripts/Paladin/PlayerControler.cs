@@ -41,11 +41,15 @@ public class PlayerControler : MonoBehaviour
                     Agent.velocity = Vector3.zero;
                     Agent.isStopped = true;
                     //Debug.Log(Statistics.melee_damage());
+
                     hit.transform.gameObject.GetComponent<StatisticsController>().take_PhysicalDamage(Statistics.melee_damage());
                     RotateTowards(hit.transform);
                     meleeAttack();
 
                 }else{
+                    //NavMeshHit navHit;
+
+                    //NavMesh.SamplePosition(hit.point, out navHit,50, -1);
                     //Debug.Log(hit.collider.tag);
                     Agent.SetDestination(hit.point);
                     PlayerAnimator.Run(true);
@@ -60,8 +64,9 @@ public class PlayerControler : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Q) & !during_attack){
             if(Statistics.mana_points >= 40){
+
                 Agent.isStopped = true;
-                RotateTowards(hit.transform);
+                //RotateTowards(hit.transform);
                 point = hit.point;
                 Spell1();
             }
@@ -69,6 +74,7 @@ public class PlayerControler : MonoBehaviour
 
         if(Input.GetKey(KeyCode.W) & !during_attack){
             if(Statistics.mana_points >= 100){
+
                 Agent.isStopped = true;
                 Spell2();
             }
@@ -88,7 +94,7 @@ public class PlayerControler : MonoBehaviour
             PlayerAnimator.Run(false);
         }
 
-        Cam.transform.position = transform.position - new Vector3(camX,camY,0f);
+        
     }
 
     private void RotateTowards (Transform target) {
@@ -98,35 +104,19 @@ public class PlayerControler : MonoBehaviour
             transform.rotation = lookRotation;
     }
 
-
-    public void UselightShock(){
-        during_attack = true;
-        SpellsScript.lightShock(point);
-    }
-
-    public void UseRevelation(){
-        during_attack = true;
-        SpellsScript.Revelation(transform.position);
-    }
-
-    public void UseLightexplode(){
-        during_attack = true;
-        SpellsScript.Lightexplode(transform.position);
-    }
-
     private void Spell1(){
         during_attack = true; 
-        PlayerAnimator.Spell1();
+        SpellsScript.Spell1(point);
     }
 
     private void Spell2(){
         during_attack = true; 
-        PlayerAnimator.Spell2();
+        SpellsScript.Spell2(transform.position);
     }
 
     private void Spell3(){
         during_attack = true; 
-        PlayerAnimator.Spell3();
+        SpellsScript.Spell3(transform.position);
     }
 
     private void meleeAttack(){

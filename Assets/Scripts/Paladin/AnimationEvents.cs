@@ -8,8 +8,11 @@ public class AnimationEvents : MonoBehaviour
     [SerializeField]
     private PlayerControler PlayerControler;
 
+    [SerializeField]
+    private Spells spellbook;
+
     public void Spell1activate(){
-        PlayerControler.UselightShock();
+        spellbook.UselightShock();
     }
 
     public void Spell1end(){
@@ -17,7 +20,7 @@ public class AnimationEvents : MonoBehaviour
     }
 
     public void Spell2activate(){
-        PlayerControler.UseRevelation();
+        spellbook.UseRevelation();
     }
 
     public void Spell2end(){
@@ -25,7 +28,7 @@ public class AnimationEvents : MonoBehaviour
     }
 
     public void Spell3activate(){
-        PlayerControler.UseLightexplode();
+        spellbook.UseLightexplode();
     }
 
     public void Spell3end(){
