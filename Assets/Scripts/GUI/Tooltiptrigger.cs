@@ -10,6 +10,11 @@ public class Tooltiptrigger : MonoBehaviour , IPointerEnterHandler , IPointerExi
     public string content;
     public string title;
 
+    public void updatetext(string _content, string _title = ""){
+        content = _content;
+        title = _title;
+    }
+
     public void OnPointerEnter(PointerEventData eventData){
         //delay = LeanTween.delayedCall(0.3f, ()=>
         //{

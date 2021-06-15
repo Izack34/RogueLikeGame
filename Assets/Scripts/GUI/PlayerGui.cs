@@ -20,9 +20,22 @@ public class PlayerGui : MonoBehaviour
     [SerializeField]
     private Image EnemyHpBar;
 
+    [SerializeField]
+    private Image SkillQimage;
+
+    [SerializeField]
+    private GameObject SkillWimage;
+
+    [SerializeField]
+    private Image SkillEimage;
     private StatisticsController EnemyStats;
 
-    // Update is called once per frame
+    private TooltipUpdate TTupdate;
+
+    private void Start() {
+        TTupdate = GetComponent<TooltipUpdate>();
+    }
+    
     void Update()
     {
         HealthBar.fillAmount = (float)Statistics.health_points/(float)Statistics.max_health;
@@ -30,6 +43,8 @@ public class PlayerGui : MonoBehaviour
         if(EnemyStats != null){
             EnemyHpBar.fillAmount = (float)EnemyStats.health_points/(float)EnemyStats.max_health;
         }
+        TTupdate.updateManaHealthBar(Statistics.health_points, Statistics.max_health, 
+                                    Statistics.mana_points, Statistics.max_mana);
     }
 
     public void ShowEnemyHP(StatisticsController Stats){

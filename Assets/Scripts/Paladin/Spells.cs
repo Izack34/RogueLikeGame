@@ -63,7 +63,8 @@ public class Spells : MonoBehaviour
                 GameObject hitCollider = hitColliders[i].gameObject;
                 if (hitCollider.CompareTag("Enemy"))
                 {
-                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(150);
+                    
+                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(150 * Statistics.Spell_damage());
                 }
             }
             Statistics.mana_use(40);
@@ -82,7 +83,7 @@ public class Spells : MonoBehaviour
                 GameObject hitCollider = hitColliders[i].gameObject;
                 if (hitCollider.CompareTag("Enemy"))
                 {
-                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(30);
+                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(30 * Statistics.Spell_damage());
                 }
             }
             Statistics.mana_use(100);
@@ -100,7 +101,7 @@ public class Spells : MonoBehaviour
                 if (hitCollider.CompareTag("Enemy"))
                 {
                     Statistics.recieveHealing(5);
-                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(200);
+                    hitCollider.GetComponent<StatisticsController>().take_FireDamage(200 * Statistics.Spell_damage());
                 }
             }
             Statistics.mana_use(60);

@@ -23,7 +23,6 @@ public class StatisticsController : MonoBehaviour
     private int HealthRateRegen = 5;
     private int ManaRateRegen = 3;
     
-
     //health and melee dmg
     public int strength = 100;
     //attack speed and mv speed generaly
@@ -53,8 +52,9 @@ public class StatisticsController : MonoBehaviour
         return (int)damage; 
     }
 
-    //funkcja do oblicznaia obrazen melee
-    //magic musza byc ze stala wartoscia
+    public float Spell_damage(){
+        return (float)inteligence/100f; 
+    }
 
     public bool mana_use(int Used_mana_points){
         if(mana_points >= Used_mana_points){

@@ -21,12 +21,13 @@ public class Tooltip : MonoBehaviour
 
     public void Settext( string contentText, string title = ""){
 
-        if( string.IsNullOrEmpty(title)){
+        if(string.IsNullOrEmpty(title)){
             Titletop.gameObject.SetActive(false);
 
         }else{
             Titletop.gameObject.SetActive(true);
             Titletop.text = title;
+
         }
 
         Content.text = contentText;

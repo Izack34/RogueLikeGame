@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TooltipSystem : MonoBehaviour
 {
+    //singleton
     private static TooltipSystem tooltipsystem;
 
     public Tooltip tooltip;

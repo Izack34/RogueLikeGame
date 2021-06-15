@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4800647764343517151}
   - component: {fileID: 2517734698531685275}
   - component: {fileID: 5769955313554422531}
+  - component: {fileID: 1033660118}
   m_Layer: 5
   m_Name: CDImageE
   m_TagString: Untagged
@@ -70,11 +71,25 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.669
+  m_FillAmount: 0.654
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1033660118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948519730627804996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: damge nearby enemies
+  title: E - light bust
 --- !u!1 &2293379493053873307
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.5189209, y: -0.20559692}
-  m_SizeDelta: {x: -24.0785, y: -7.5718}
+  m_AnchoredPosition: {x: -0.00010681152, y: -0.3852005}
+  m_SizeDelta: {x: 0.000091553, y: -13.6764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2293379493232879600
 CanvasRenderer:
@@ -1121,6 +1136,7 @@ GameObject:
   - component: {fileID: 2293379493434074439}
   - component: {fileID: 2293379493434074436}
   - component: {fileID: 2293379493434074440}
+  - component: {fileID: 1676145323}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: GUI
@@ -1229,6 +1245,23 @@ MonoBehaviour:
   ManaBar: {fileID: 2293379493633442069}
   EnemyBar: {fileID: 2293379494523732651}
   EnemyHpBar: {fileID: 2293379494933789503}
+--- !u!114 &1676145323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493434074437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4043bf49c2859409336bd97ff20304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Healthbar: {fileID: 762157444}
+  Manabar: {fileID: 1604284710}
+  SkillQ: {fileID: 0}
+  SkillW: {fileID: 0}
+  SkillE: {fileID: 0}
 --- !u!1 &2293379493633442067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1332,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.539
+  m_FillAmount: 0.684
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1436,6 +1469,7 @@ GameObject:
   - component: {fileID: 2293379493772103298}
   - component: {fileID: 2293379493772103300}
   - component: {fileID: 2293379493772103301}
+  - component: {fileID: 1734498892}
   m_Layer: 5
   m_Name: IconAA
   m_TagString: Untagged
@@ -1500,6 +1534,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1734498892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493772103299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: deal phsical damage to target
+  title: Mouse1 - AutoAtack
 --- !u!1 &2293379493858211129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,6 +1559,7 @@ GameObject:
   - component: {fileID: 2293379493858211128}
   - component: {fileID: 2293379493858211130}
   - component: {fileID: 2293379493858211131}
+  - component: {fileID: 1892808580}
   m_Layer: 5
   m_Name: IconW
   m_TagString: Untagged
@@ -1576,6 +1625,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1892808580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493858211129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: heal Paladin and damge nearby enem
+  title: W - Reveltion
 --- !u!1 &2293379493932574088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1650,7 @@ GameObject:
   - component: {fileID: 2293379493932574091}
   - component: {fileID: 2293379493932574093}
   - component: {fileID: 2293379493932574090}
+  - component: {fileID: 1704642466}
   m_Layer: 5
   m_Name: IconE
   m_TagString: Untagged
@@ -1652,6 +1716,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1704642466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493932574088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: damge nearby enemies
+  title: E - light bust
 --- !u!1 &2293379493953013568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,6 +1741,7 @@ GameObject:
   - component: {fileID: 2293379493953013571}
   - component: {fileID: 2293379493953013573}
   - component: {fileID: 2293379493953013570}
+  - component: {fileID: 762157444}
   m_Layer: 5
   m_Name: Hpbar
   m_TagString: Untagged
@@ -1729,6 +1808,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &762157444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493953013568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 300/300
+  title: 
 --- !u!1 &2293379493963575850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +1833,7 @@ GameObject:
   - component: {fileID: 2293379493963575853}
   - component: {fileID: 2293379493963575855}
   - component: {fileID: 2293379493963575852}
+  - component: {fileID: 2077142387}
   m_Layer: 5
   m_Name: SkillQ
   m_TagString: Untagged
@@ -1805,6 +1899,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2077142387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379493963575850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: hust enemy by the heavens
+  title: Q - light
 --- !u!1 &2293379494125173695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2602,8 +2710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21}
-  m_SizeDelta: {x: 400, y: 65}
+  m_AnchoredPosition: {x: 12, y: -19.98993}
+  m_SizeDelta: {x: 367.834, y: 44.8368}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2293379494523732652
 CanvasRenderer:
@@ -2633,7 +2741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7364a4590b0bc38428e39dd6dc8e7a65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9d5f6625b0b035841a1153f7e5466a94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2790,6 +2898,7 @@ GameObject:
   - component: {fileID: 2293379494628747816}
   - component: {fileID: 2293379494628747818}
   - component: {fileID: 2293379494628747819}
+  - component: {fileID: 1604284710}
   m_Layer: 5
   m_Name: ManaBar
   m_TagString: Untagged
@@ -2856,6 +2965,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1604284710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293379494628747817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: 200/200
+  title: 
 --- !u!1 &2293379494779067787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,8 +3304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.519104, y: -0.62124634}
-  m_SizeDelta: {x: -26.906, y: 6.2767}
+  m_AnchoredPosition: {x: 0.015106201, y: -1.0144005}
+  m_SizeDelta: {x: -2.9728, y: -5.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2293379494933789502
 CanvasRenderer:
@@ -3642,6 +3765,7 @@ GameObject:
   - component: {fileID: 6282732707958649168}
   - component: {fileID: 7728833447064977514}
   - component: {fileID: 9049514889094736843}
+  - component: {fileID: 1878397438}
   m_Layer: 5
   m_Name: CDImageE (1)
   m_TagString: Untagged
@@ -3706,6 +3830,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1878397438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9019384609177447146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: heal Paladin and damge nearby enem
+  title: W - Reveltion
 --- !u!1 &9186401236121463334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,6 +3855,7 @@ GameObject:
   - component: {fileID: 2944160980334355898}
   - component: {fileID: 592722604275283626}
   - component: {fileID: 42705019742718624}
+  - component: {fileID: 274836769}
   m_Layer: 5
   m_Name: CDImageE (1)
   m_TagString: Untagged
@@ -3778,6 +3917,20 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &274836769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9186401236121463334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6dc87bd73c4cc949acfab90ea10665c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: hust enemy by the heavens
+  title: Q - light
