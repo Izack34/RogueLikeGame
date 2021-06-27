@@ -18,6 +18,8 @@ public class CameraControl : MonoBehaviour
     {
         camX += Input.mouseScrollDelta.y;
         camY += Input.mouseScrollDelta.y; 
+        camX = Mathf.Clamp(camX, -14, -3);
+        camY = Mathf.Clamp(camY, -14, -3);
         //need clamp  
         transform.position = Player.position - new Vector3(camX,camY,0f);
     }

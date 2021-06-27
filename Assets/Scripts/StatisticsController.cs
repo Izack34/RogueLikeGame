@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class StatisticsController : MonoBehaviour
 {
+    public Animator animator;
+    public UnityEngine.AI.NavMeshAgent Agent;
     public int max_health;
     public int health_points;
-
-
     public int Attack_damage = 100;
     public int crit_chance;
     public int max_mana;
@@ -20,8 +20,8 @@ public class StatisticsController : MonoBehaviour
     public int Lightning_resistance;
     public int Dark_resistance;
 
-    private int HealthRateRegen = 5;
-    private int ManaRateRegen = 3;
+    public int HealthRateRegen = 5;
+    public int ManaRateRegen = 3;
     
     //health and melee dmg
     public int strength = 100;
@@ -34,13 +34,31 @@ public class StatisticsController : MonoBehaviour
     public Die DieDelegate;
     
     private void Start() {
-        health_points = max_health;
-        mana_points = max_mana;
-        StartCoroutine(ManaRegen());
-        StartCoroutine(HealthRegen());
 
         //DieDelegate = die;
+        Modstrength();
+        Modagility();
+        Modinteligence();
 
+        health_points = max_health;
+        mana_points = max_mana;
+        
+        StartCoroutine(ManaRegen());
+        StartCoroutine(HealthRegen());
+    }
+    public void Modstrength(){
+        max_health = strength * 4;
+    }
+
+    public void Modagility(){    
+        float speed = (float)agility/100;
+        animator.SetFloat("AASpeed",speed);
+    
+        Agent.speed = 6*((float)agility/100);
+    }
+
+    public void Modinteligence(){
+        max_mana = inteligence * 2;
     }
 
     public int melee_damage(){
@@ -59,6 +77,7 @@ public class StatisticsController : MonoBehaviour
     public bool mana_use(int Used_mana_points){
         if(mana_points >= Used_mana_points){
             mana_points -= Used_mana_points;
+            
             return true;
         }else{
             return false;

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerGui : MonoBehaviour
 {
-    [SerializeField]
     private StatisticsController Statistics;
     
     [SerializeField]
@@ -34,6 +33,8 @@ public class PlayerGui : MonoBehaviour
 
     private void Start() {
         TTupdate = GetComponent<TooltipUpdate>();
+        GameObject Player = GameObject.FindWithTag("Player");
+        Statistics = Player.GetComponent<StatisticsController>();
     }
     
     void Update()

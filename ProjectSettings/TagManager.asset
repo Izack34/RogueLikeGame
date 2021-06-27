@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - GUI
+  - PowerTorch
+  - Powers
   layers:
   - Default
   - TransparentFX

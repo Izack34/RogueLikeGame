@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseOnController : MonoBehaviour
+public class CharacterInfoScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,9 +13,6 @@ public class MouseOnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Ray raytarget = Cam.ScreenPointToRay(Input.mousePosition);
-        //Physics.Raycast(raytarget, out hit);
-
         
     }
 }

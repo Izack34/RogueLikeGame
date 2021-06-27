@@ -14,11 +14,6 @@ public class PlayerControler : MonoBehaviour
 
     private Spells SpellsScript;
     //private float GDC = 1f; //globalcooldown
-    public float camX;
-
-    public float camY;
-    
-
     private Vector3 point;
     public bool during_attack = false;
 
@@ -27,6 +22,8 @@ public class PlayerControler : MonoBehaviour
         SpellsScript = GetComponent<Spells>();
         Statistics = GetComponent<StatisticsController>();
         Statistics.DieDelegate += OnDie;
+        Cam = Camera.main;
+
     }
 
     void Update()
@@ -35,9 +32,13 @@ public class PlayerControler : MonoBehaviour
         Ray raytarget = Cam.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(raytarget, out hit);
 
+        float dist = Distancetotarget(hit.collider.transform.position);
+        //Debug.Log(hit.collider.tag);
+        // Debug.Log(dist);
         if(Input.GetMouseButton(0) & !during_attack){
             if(hit.collider.tag == "Enemy"){
-                if(Vector3.Distance(transform.position, hit.point) <= 3){
+                if(dist <= 3){
+
                     Agent.velocity = Vector3.zero;
                     Agent.isStopped = true;
                     //Debug.Log(Statistics.melee_damage());
@@ -47,12 +48,24 @@ public class PlayerControler : MonoBehaviour
                     meleeAttack();
 
                 }else{
+
                     //NavMeshHit navHit;
 
                     //NavMesh.SamplePosition(hit.point, out navHit,50, -1);
                     //Debug.Log(hit.collider.tag);
                     Agent.SetDestination(hit.point);
                     PlayerAnimator.Run(true);
+
+                }
+            }else if(hit.collider.tag == "PowerTorch"){
+                if(dist <= 3){
+                    
+                    Agent.velocity = Vector3.zero;
+                    hit.transform.gameObject.GetComponent<TorchPowerUp>().StartPickingPower();
+
+                }else{
+                    Agent.SetDestination(hit.point);
+
                 }
             }else{
 
@@ -88,13 +101,17 @@ public class PlayerControler : MonoBehaviour
         }
 
 
-        if(Agent.velocity.sqrMagnitude >0){
+        if(Agent.velocity.sqrMagnitude > 0){
             PlayerAnimator.Run(true);
         }else{
             PlayerAnimator.Run(false);
         }
 
         
+    }
+
+    private float Distancetotarget(Vector3 _point){
+        return Vector3.Distance(transform.position, _point);
     }
 
     private void RotateTowards (Transform target) {
@@ -128,6 +145,7 @@ public class PlayerControler : MonoBehaviour
         during_attack = false;
         Agent.isStopped = false;
     }
+
 
     public void OnDie(){
         during_attack = true;

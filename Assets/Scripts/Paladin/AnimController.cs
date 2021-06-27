@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimController : MonoBehaviour
 {
-     public Animator animator;
+    public Animator animator;
     
     public void Run(bool run){
         animator.SetBool("Run", run);
@@ -26,4 +26,5 @@ public class AnimController : MonoBehaviour
     public void Spell3(){
         animator.SetTrigger("Spell3");
     }
+
 }

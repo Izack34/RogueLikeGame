@@ -11,8 +11,8 @@ public class TooltipUpdate : MonoBehaviour
     public Tooltiptrigger SkillE;
 
     public void updateManaHealthBar(int Currenthp, int Maxhp, int CurrentMana, int MaxMana ){
-        Healthbar.updatetext(Currenthp+"/"+Maxhp);
-        Manabar.updatetext(CurrentMana+"/"+MaxMana);
+        Healthbar.updatetext(Currenthp+"/" + Maxhp);
+        Manabar.updatetext(CurrentMana+"/" + MaxMana);
     }
  
     public void updateSkill(){

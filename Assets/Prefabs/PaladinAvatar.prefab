@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1030884409931606368}
   - component: {fileID: 1030884409931606371}
   - component: {fileID: 1030884409931606374}
+  - component: {fileID: 1441235688}
   m_Layer: 2
   m_Name: PaladinAvatar
   m_TagString: Player
@@ -86,8 +87,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
   Agent: {fileID: 1030884409931606396}
-  camX: -12
-  camY: -12
   during_attack: 0
 --- !u!114 &1030884409931606368
 MonoBehaviour:
@@ -101,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eef9561da8350f48b8cbb4586bad0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 6630291973153186446}
+  Agent: {fileID: 1030884409931606396}
   max_health: 600
   health_points: 0
   Attack_damage: 100
@@ -112,7 +113,9 @@ MonoBehaviour:
   Frost_resistance: 20
   Lightning_resistance: 20
   Dark_resistance: 0
-  strength: 120
+  HealthRateRegen: 5
+  ManaRateRegen: 3
+  strength: 100
   agility: 100
   inteligence: 100
 --- !u!114 &1030884409931606371
@@ -143,6 +146,18 @@ MonoBehaviour:
   lightShock_effect: {fileID: 115730, guid: 9db79c551e62c774f95ff28b97a0350b, type: 3}
   Revelation_effect: {fileID: 118974, guid: 3f7b232080ca3a84f98322f95b559ddd, type: 3}
   LE_effect: {fileID: 100004, guid: a89abc0d2591545288f4c041059ae633, type: 3}
+--- !u!114 &1441235688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030884409931606399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8dedecd7f51614ca427ff13bca57dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1030884411164998390
 GameObject:
   m_ObjectHideFlags: 0
