@@ -8,6 +8,7 @@ TagManager:
   - GUI
   - PowerTorch
   - Powers
+  - MobSpawner
   layers:
   - Default
   - TransparentFX

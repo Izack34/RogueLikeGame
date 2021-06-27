@@ -76,7 +76,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         if(Input.GetKey(KeyCode.Q) & !during_attack){
-            if(Statistics.mana_points >= 40){
+            if(Statistics.mana_points >= 20){
 
                 Agent.isStopped = true;
                 //RotateTowards(hit.transform);
@@ -86,7 +86,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         if(Input.GetKey(KeyCode.W) & !during_attack){
-            if(Statistics.mana_points >= 100){
+            if(Statistics.mana_points >= 60){
 
                 Agent.isStopped = true;
                 Spell2();
@@ -94,7 +94,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         if(Input.GetKey(KeyCode.E)  & !during_attack){
-            if(Statistics.mana_points >= 60){
+            if(Statistics.mana_points >= 30){
                 Agent.isStopped = true;
                 Spell3();
             }

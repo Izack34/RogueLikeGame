@@ -38,6 +38,7 @@ public class SkeletonController : MonoBehaviour
         enemy_animator = GetComponent<SkeletonAnimation>();
         navAgent = GetComponent<NavMeshAgent>();
         Statistics = GetComponent<StatisticsController>();
+        Statistics.DieDelegate += OnDie;
 
         target = GameObject.FindWithTag("Player").transform;
         Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
@@ -197,5 +198,14 @@ public class SkeletonController : MonoBehaviour
     void OnMouseExit()
     {
         Gui.EndShowEnemyHP();
+    }
+
+    public void OnDie(){
+        Gui.EndShowEnemyHP();
+        //during_attack = true;
+        //Agent.isStopped = true;
+        //Debug.Log("delegate works");
+        //PlayerAnimator.Dead(true);
+        Destroy(gameObject);
     }
 }

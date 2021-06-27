@@ -6,6 +6,10 @@ public class StatisticsController : MonoBehaviour
 {
     public Animator animator;
     public UnityEngine.AI.NavMeshAgent Agent;
+
+    private int BaseHealth = 200;
+
+    private int BaseMana = 50;
     public int max_health;
     public int health_points;
     public int Attack_damage = 100;
@@ -47,7 +51,7 @@ public class StatisticsController : MonoBehaviour
         StartCoroutine(HealthRegen());
     }
     public void Modstrength(){
-        max_health = strength * 4;
+        max_health = BaseHealth + strength * 4;
     }
 
     public void Modagility(){    

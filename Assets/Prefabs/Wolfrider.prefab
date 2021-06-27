@@ -298,6 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eef9561da8350f48b8cbb4586bad0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7226595041165335565}
+  Agent: {fileID: 7226595040414042196}
   max_health: 500
   health_points: 0
   Attack_damage: 100
@@ -309,6 +311,8 @@ MonoBehaviour:
   Frost_resistance: 0
   Lightning_resistance: 0
   Dark_resistance: 0
+  HealthRateRegen: 5
+  ManaRateRegen: 3
   strength: 100
   agility: 100
   inteligence: 100

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class FireballSpell : MonoBehaviour
 {
-    private int Damage = 200;
+    private int Damage = 80;
     private int ProjectileSpeed = 10;
 
     private void Start() {
         Destroy(gameObject,8f);
     }
+    
     public void SetDamage(int dmg){
-        dmg = Damage;
+        Damage = dmg;
 
     }
 
@@ -25,7 +26,7 @@ public class FireballSpell : MonoBehaviour
     {
         Debug.Log("enter colision");
         if (Object.gameObject.CompareTag("Player")){
-            Object.gameObject.GetComponent<StatisticsController>().take_FireDamage(80f);
+            Object.gameObject.GetComponent<StatisticsController>().take_FireDamage((float)Damage);
             Destroy(gameObject);
         }else{
 

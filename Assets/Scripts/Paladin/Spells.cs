@@ -67,7 +67,7 @@ public class Spells : MonoBehaviour
                     hitCollider.GetComponent<StatisticsController>().take_FireDamage(150 * Statistics.Spell_damage());
                 }
             }
-            Statistics.mana_use(40);
+            Statistics.mana_use(20);
             Destroy(LSEffect,2f);
         }
         
@@ -86,7 +86,7 @@ public class Spells : MonoBehaviour
                     hitCollider.GetComponent<StatisticsController>().take_FireDamage(30 * Statistics.Spell_damage());
                 }
             }
-            Statistics.mana_use(100);
+            Statistics.mana_use(60);
             Destroy(Rev_effect,3f);
         }
 
@@ -104,7 +104,7 @@ public class Spells : MonoBehaviour
                     hitCollider.GetComponent<StatisticsController>().take_FireDamage(200 * Statistics.Spell_damage());
                 }
             }
-            Statistics.mana_use(60);
+            Statistics.mana_use(30);
 
             Destroy(Lightexplode_effect,3f);
 
