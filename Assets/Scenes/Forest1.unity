@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8e2e5afdacadc6d4da125709e4337545, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f624d64cc1f18bf408f0fd2f75e531b3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -544,7 +544,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.8773585, g: 0.85356224, b: 0.7821734, a: 0.7647059}
+  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.7647059}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -584,7 +584,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -603,7 +603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 192.69585, y: 225.24889, z: -152.4672}
+  m_LocalPosition: {x: 157.8, y: 295.3, z: -240.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1654086350}
@@ -1530,10 +1530,6 @@ PrefabInstance:
     - target: {fileID: 1317576073846512104, guid: f826ace89224a5f49824488044e996fe, type: 3}
       propertyPath: m_Name
       value: Gui
-      objectReference: {fileID: 0}
-    - target: {fileID: 1902054753128271700, guid: f826ace89224a5f49824488044e996fe, type: 3}
-      propertyPath: Statistics
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5395187676772563010, guid: f826ace89224a5f49824488044e996fe, type: 3}
       propertyPath: m_RootOrder

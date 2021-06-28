@@ -10,6 +10,7 @@ public class StatisticsController : MonoBehaviour
     private int BaseHealth = 200;
 
     private int BaseMana = 50;
+    
     public int max_health;
     public int health_points;
     public int Attack_damage = 100;
