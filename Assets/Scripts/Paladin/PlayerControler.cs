@@ -42,7 +42,7 @@ public class PlayerControler : MonoBehaviour
                     Agent.velocity = Vector3.zero;
                     Agent.isStopped = true;
                     //Debug.Log(Statistics.melee_damage());
-
+                    Agent.ResetPath();
                     hit.transform.gameObject.GetComponent<StatisticsController>().take_PhysicalDamage(Statistics.melee_damage());
                     RotateTowards(hit.transform);
                     meleeAttack();
@@ -61,6 +61,7 @@ public class PlayerControler : MonoBehaviour
                 if(dist <= 3){
                     
                     Agent.velocity = Vector3.zero;
+                    Agent.ResetPath();
                     hit.transform.gameObject.GetComponent<TorchPowerUp>().StartPickingPower();
 
                 }else{
@@ -79,6 +80,7 @@ public class PlayerControler : MonoBehaviour
             if(Statistics.mana_points >= 20){
 
                 Agent.isStopped = true;
+                Agent.ResetPath();
                 //RotateTowards(hit.transform);
                 point = hit.point;
                 Spell1();
@@ -89,6 +91,7 @@ public class PlayerControler : MonoBehaviour
             if(Statistics.mana_points >= 60){
 
                 Agent.isStopped = true;
+                Agent.ResetPath();
                 Spell2();
             }
         }
@@ -96,6 +99,7 @@ public class PlayerControler : MonoBehaviour
         if(Input.GetKey(KeyCode.E)  & !during_attack){
             if(Statistics.mana_points >= 30){
                 Agent.isStopped = true;
+                Agent.ResetPath();
                 Spell3();
             }
         }

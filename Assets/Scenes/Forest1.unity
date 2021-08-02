@@ -544,7 +544,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.7647059}
+  m_Color: {r: 0.745283, g: 0.6728857, b: 0.35506406, a: 0.7647059}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -1527,6 +1527,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 411741573270838680, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: title
+      value: W - Revelation
+      objectReference: {fileID: 0}
+    - target: {fileID: 411741573270838680, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: content
+      value: heal paladin and damage neaby enemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 411741573464862800, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: title
+      value: Mouse1 - AutoAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 411741574664417922, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: PictureOfPower.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: b9c61c6896eff5b43ae44d047f49b31d, type: 3}
+    - target: {fileID: 411741574664417922, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: PictureOfPower.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 88c47ee50e9dfe240b499f761f7eda42, type: 3}
+    - target: {fileID: 411741574664417922, guid: f826ace89224a5f49824488044e996fe, type: 3}
+      propertyPath: PictureOfPower.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: dd25e00ba744112468a156138bf652ae, type: 3}
     - target: {fileID: 1317576073846512104, guid: f826ace89224a5f49824488044e996fe, type: 3}
       propertyPath: m_Name
       value: Gui

@@ -10,9 +10,11 @@ public class SkeletonAnimation : MonoBehaviour
         animator.SetBool("Walk", walk);
 
     }
+
     public void Run(bool run){
         animator.SetBool("Run", run);
     }
+    
     public void Attack(){
         animator.SetTrigger("Attack");
     }
