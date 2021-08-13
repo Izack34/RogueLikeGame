@@ -9,13 +9,13 @@ public class PlayerControler : MonoBehaviour
     public RaycastHit hit;
     public NavMeshAgent Agent;
     private AnimController PlayerAnimator;
-
     private StatisticsController Statistics;
-
     private Spells SpellsScript;
     //private float GDC = 1f; //globalcooldown
     private Vector3 point;
     public bool during_attack = false;
+    private Ray MouseRaytarget;
+
 
     private void Start() {
         PlayerAnimator = GetComponent<AnimController>();
@@ -28,20 +28,18 @@ public class PlayerControler : MonoBehaviour
 
     void Update()
     {
-
-        Ray raytarget = Cam.ScreenPointToRay(Input.mousePosition);
-        Physics.Raycast(raytarget, out hit);
-
-        float dist = Distancetotarget(hit.collider.transform.position);
-        //Debug.Log(hit.collider.tag);
-        // Debug.Log(dist);
         if(Input.GetMouseButton(0) & !during_attack){
+
+            hit = Mousetarget();
+
+            float dist = Distancetotarget(hit.collider.transform.position);
+
             if(hit.collider.tag == "Enemy"){
                 if(dist <= 3){
 
                     Agent.velocity = Vector3.zero;
                     Agent.isStopped = true;
-                    //Debug.Log(Statistics.melee_damage());
+                    
                     Agent.ResetPath();
                     hit.transform.gameObject.GetComponent<StatisticsController>().take_PhysicalDamage(Statistics.melee_damage());
                     RotateTowards(hit.transform);
@@ -49,10 +47,6 @@ public class PlayerControler : MonoBehaviour
 
                 }else{
 
-                    //NavMeshHit navHit;
-
-                    //NavMesh.SamplePosition(hit.point, out navHit,50, -1);
-                    //Debug.Log(hit.collider.tag);
                     Agent.SetDestination(hit.point);
                     PlayerAnimator.Run(true);
 
@@ -82,7 +76,7 @@ public class PlayerControler : MonoBehaviour
                 Agent.isStopped = true;
                 Agent.ResetPath();
                 //RotateTowards(hit.transform);
-                point = hit.point;
+                point = Mousetarget().point;
                 Spell1();
             }
         }
@@ -118,6 +112,12 @@ public class PlayerControler : MonoBehaviour
         return Vector3.Distance(transform.position, _point);
     }
 
+    private RaycastHit Mousetarget(){
+        MouseRaytarget = Cam.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(MouseRaytarget, out hit);
+
+        return hit;
+    }
     private void RotateTowards (Transform target) {
             Vector3 direction = (target.position - transform.position).normalized;
             Quaternion lookRotation = Quaternion.LookRotation(direction);

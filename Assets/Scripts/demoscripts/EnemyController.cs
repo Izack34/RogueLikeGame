@@ -11,12 +11,11 @@ public enum State{
 
 public class EnemyController : MonoBehaviour
 {
-    private EnemyAnim enemy_animator;
-    private NavMeshAgent navAgent;
+    protected private NavMeshAgent navAgent;
 
-    private PlayerGui Gui;
+    protected private PlayerGui Gui;
 
-    private State EnemyState;
+    protected private State EnemyState;
 
     public float walk_Speed = 0.5f;
     public float run_Speed = 4f;
@@ -25,21 +24,21 @@ public class EnemyController : MonoBehaviour
     public float current_chase_distance = 1.8f;
     public float attack_distance = 1.8f;
     public float chase_after_attack_distance = 2f;
-
     public float patrol_rad_Min = 20f, patrol_rad_Max = 60f;
     public float patrol_for_this_Time = 15f;
-    private float patrol_Timer;
+    protected private float patrol_Timer;
 
     public float wait_Before_Attack = 2f;
-    private float attack_Timer;
+    protected private float attack_Timer;
 
-    private StatisticsController Statistics;
-    private bool DuringAttack = false;
-    private Transform target;
+    protected private StatisticsController Statistics;
+    protected private bool DuringAttack = false;
+    protected private Transform target;
+    protected private NavMeshHit navHit;
 
     void Awake()
     { 
-        enemy_animator = GetComponent<EnemyAnim>();
+        
         navAgent = GetComponent<NavMeshAgent>();
         Statistics = GetComponent<StatisticsController>();
         
@@ -48,7 +47,7 @@ public class EnemyController : MonoBehaviour
         Gui = GameObject.FindWithTag("GUI").GetComponent<PlayerGui>();
     }
 
-    void Start() {
+    public void Start() {
         EnemyState = State.PATROL;
 
         patrol_Timer = patrol_for_this_Time;
@@ -61,7 +60,7 @@ public class EnemyController : MonoBehaviour
 
     
 
-    void Update()
+    public void Update()
     {
         if(EnemyState == State.PATROL){
             Partol();
@@ -79,10 +78,11 @@ public class EnemyController : MonoBehaviour
 
 
 
-    void Partol(){
+    public virtual void Partol(){
+
         navAgent.isStopped = false;
         navAgent.speed = walk_Speed;
-        enemy_animator.Walk(true);
+        
 
         patrol_Timer += Time.deltaTime;
 
@@ -93,73 +93,51 @@ public class EnemyController : MonoBehaviour
 
         }
 
-        if(navAgent.velocity.sqrMagnitude >0){
-            enemy_animator.Walk(true);
         
-        }else
-        {
-            enemy_animator.Walk(false);
-            //stop walk'
-        }
 
         if(Vector3.Distance(transform.position, target.position) <= chase_Distance){
-            enemy_animator.Walk(false);
-            //walk false;
-            enemy_animator.Run(true);
-            //run
+            
             EnemyState = State.CHASE;
         }
     }
 
 
 
-    void chase(){
+    public virtual void chase(){
         navAgent.isStopped = false;
         navAgent.speed = run_Speed;
 
 
-        enemy_animator.Run(true);
+        
         //running to player
         navAgent.SetDestination(target.position);
 
-        if(navAgent.velocity.sqrMagnitude >0){
-            enemy_animator.Run(true);
-            //walk anim
-        
-        }else
-        {
-            enemy_animator.Run(false);
-            //stop walk'
-        }
 
         if(Vector3.Distance(transform.position, target.position) <= attack_distance){
-            enemy_animator.Run(false);
-            enemy_animator.Walk(false);
-            //walk false
-            //run false
 
             EnemyState = State.ATTACK;
 
         }else if(Vector3.Distance(transform.position, target.position) > chase_Distance) {
-            enemy_animator.Run(false);
-            //stop runni'ng
+            
+        
             EnemyState = State.PATROL;
         }
 
     }//chase
 
 
-    void attack(){
+    public virtual void attack(){
         navAgent.velocity = Vector3.zero;
         navAgent.isStopped = true;
         attack_Timer += Time.deltaTime;
-
+        transform.LookAt(target);
+        
         //Debug.Log(DuringAttack);
 
         if(Vector3.Distance(transform.position, target.position)
                              > attack_distance + chase_after_attack_distance 
                              & !DuringAttack){
-            enemy_animator.Run(true);
+            
             EnemyState = State.CHASE;
         }
 
@@ -167,9 +145,8 @@ public class EnemyController : MonoBehaviour
         if(!DuringAttack & attack_Timer > wait_Before_Attack){
 
             DuringAttack = true;
-            transform.LookAt(target);
+            
             target.gameObject.GetComponent<StatisticsController>().take_PhysicalDamage(Statistics.melee_damage());
-            enemy_animator.Attack();
             attack_Timer = 0f;
         }
     }//attack
@@ -180,7 +157,7 @@ public class EnemyController : MonoBehaviour
         DuringAttack = false;
     }
 
-    void setRandomDestination(){
+    public void setRandomDestination(){
 
         float rand_Radius = Random.Range(patrol_rad_Min,patrol_rad_Max);
 
@@ -188,18 +165,16 @@ public class EnemyController : MonoBehaviour
 
         randDir += transform.position;
 
-        NavMeshHit navHit;
-
         NavMesh.SamplePosition(randDir, out navHit, rand_Radius, -1);
 
         navAgent.SetDestination(navHit.position);
     }
-    void OnMouseOver()
+    public void OnMouseOver()
     {
         Gui.ShowEnemyHP(Statistics);
     }
 
-    void OnMouseExit()
+    public void OnMouseExit()
     {
         Gui.EndShowEnemyHP();
     }
