@@ -17,7 +17,6 @@ public class LoadaScene : MonoBehaviour
 
     IEnumerator LoadAsyncOperation(){
         
-
         AsyncOperation Loadingscene = SceneManager.LoadSceneAsync(LoadingData.SceneNumber);
         
         while(Loadingscene.progress < 1){

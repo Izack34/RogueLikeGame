@@ -91,7 +91,6 @@ MonoBehaviour:
   run_Speed: 5
   chase_Distance: 20
   current_chase_distance: 1.8
-  caster_attack_distance: 1.8
   attack_distance: 15
   chase_after_attack_distance: 2
   patrol_rad_Min: 20

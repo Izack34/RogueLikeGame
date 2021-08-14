@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6602f29f38c0257428d7df4a6899d43d, type: 3}
+  m_Name: Powers Container
+  m_EditorClassIdentifier: 
+  PowersData:
+  - name: 
+    PictureOfPower: {fileID: 21300000, guid: b3199ae29bf246642875fc68fab4595b, type: 3}
+    content: 10 int
+    MODMax_health: 0
+    MODMax_mana: 0
+    MODCrit_chance: 0
+    MODFire_resistance: 0
+    MODFrost_resistance: 0
+    MODLightning_resistance: 0
+    MODDark_resistance: 0
+    MODHealthRateRegen: 0
+    MODManaRateRegen: 0
+    MODStrength: 0
+    MODAgility: 0
+    MODInteligence: 10
+  - name: 
+    PictureOfPower: {fileID: 21300000, guid: 3f2c8d026ca336045a39ed53935bbcd3, type: 3}
+    content: '5 str '
+    MODMax_health: 0
+    MODMax_mana: 0
+    MODCrit_chance: 0
+    MODFire_resistance: 0
+    MODFrost_resistance: 0
+    MODLightning_resistance: 0
+    MODDark_resistance: 0
+    MODHealthRateRegen: 0
+    MODManaRateRegen: 0
+    MODStrength: 5
+    MODAgility: 0
+    MODInteligence: 0
+  - name: 
+    PictureOfPower: {fileID: 21300000, guid: 9c2654c6e93b84e4391bd17cb4054e60, type: 3}
+    content: 10 agi
+    MODMax_health: 0
+    MODMax_mana: 0
+    MODCrit_chance: 0
+    MODFire_resistance: 0
+    MODFrost_resistance: 0
+    MODLightning_resistance: 0
+    MODDark_resistance: 0
+    MODHealthRateRegen: 0
+    MODManaRateRegen: 0
+    MODStrength: 0
+    MODAgility: 10
+    MODInteligence: 0
+  - name: 
+    PictureOfPower: {fileID: 21300000, guid: 9c2654c6e93b84e4391bd17cb4054e60, type: 3}
+    content: 40 maxhealth
+    MODMax_health: 40
+    MODMax_mana: 0
+    MODCrit_chance: 0
+    MODFire_resistance: 0
+    MODFrost_resistance: 0
+    MODLightning_resistance: 0
+    MODDark_resistance: 0
+    MODHealthRateRegen: 0
+    MODManaRateRegen: 0
+    MODStrength: 0
+    MODAgility: 10
+    MODInteligence: 0

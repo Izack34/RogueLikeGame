@@ -1,21 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-[System.Serializable]
-public class InputOutputData {
-    public string id;
-    public int[] index;
+
+
+[CreateAssetMenu(menuName = "PowerContainer", order = 1)]
+public class PowersContainer : ScriptableObject
+{
+    public List<PowersData> PowersData = new List<PowersData>();
+
 }
 
-[CreateAssetMenu(fileName = "Data", menuName = "Powers", order = 1)]
-public class PowerContainers : ScriptableObject
-{
+[System.Serializable]
+public class PowersData {
+
     public string name;
     public Sprite PictureOfPower; 
     public string content;
-
-    public List<InputOutputData> nodeData = new List<InputOutputData>();
-    
+    public int MODMax_health;    
+    public int MODMax_mana;
+    public int MODCrit_chance;
+    //resists is percentage
+    public int MODFire_resistance;
+    public int MODFrost_resistance;
+    public int MODLightning_resistance;
+    public int MODDark_resistance;
+    public int MODHealthRateRegen;
+    public int MODManaRateRegen;
+    public int MODStrength;
+    public int MODAgility;
+    public int MODInteligence;
 }
+
+
+

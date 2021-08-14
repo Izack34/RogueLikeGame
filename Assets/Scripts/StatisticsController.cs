@@ -35,6 +35,10 @@ public class StatisticsController : MonoBehaviour
     //mana pool magic dmg
     public int inteligence = 100;
 
+
+    private float AAspeed;
+    private float Castspeed;
+
     public delegate void Die();
     public Die DieDelegate;
     
@@ -51,19 +55,44 @@ public class StatisticsController : MonoBehaviour
         StartCoroutine(ManaRegen());
         StartCoroutine(HealthRegen());
     }
+
+    public void ModificationToStats(int[] Amounts){
+        BaseHealth += Amounts[0];
+        BaseMana += Amounts[1];
+
+        crit_chance += Amounts[2];
+        Fire_resistance += Amounts[3];
+        Frost_resistance += Amounts[4];
+        Dark_resistance += Amounts[5];
+        Lightning_resistance += Amounts[6];
+        HealthRateRegen += Amounts[7];
+        ManaRateRegen += Amounts[8];
+
+        strength += Amounts[9];
+        Modstrength();
+        agility += Amounts[10];
+        Modagility();
+        inteligence += Amounts[11];
+        Modinteligence();
+    }
+
     public void Modstrength(){
         max_health = BaseHealth + strength * 4;
     }
 
     public void Modagility(){    
-        float speed = (float)agility/100;
-        animator.SetFloat("AASpeed",speed);
+        AAspeed = (float)agility/70;
+        animator.SetFloat("AASpeed",AAspeed);
     
-        Agent.speed = 6*((float)agility/100);
+        Agent.speed = 6*((float)agility/110);
     }
 
     public void Modinteligence(){
         max_mana = inteligence * 2;
+
+        Castspeed = (float)inteligence/100;
+
+        animator.SetFloat("CastSpeed",Castspeed);
     }
 
     public int melee_damage(){
