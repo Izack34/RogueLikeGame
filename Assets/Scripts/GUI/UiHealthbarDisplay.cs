@@ -13,11 +13,11 @@ public class UiHealthbarDisplay : MonoBehaviour
 
     [SerializeField]
     private GameObject BgBar;
-
     private Image HPBar;
     private bool turnOn = false;
     void Start()
     {
+        
         HPBar = HealthBar.GetComponent<Image>();
         //HealthBar = GetComponent<Image>();
         BgBar.SetActive(false);

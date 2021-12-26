@@ -8,9 +8,8 @@ public class StatisticsController : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent Agent;
 
     private int BaseHealth = 200;
-
     private int BaseMana = 50;
-    
+
     public int max_health;
     public int health_points;
     public int Attack_damage = 100;
@@ -35,16 +34,14 @@ public class StatisticsController : MonoBehaviour
     //mana pool magic dmg
     public int inteligence = 100;
 
-
-    private float AAspeed;
-    private float Castspeed;
+    public float AAspeed;
+    public float Castspeed;
 
     public delegate void Die();
     public Die DieDelegate;
     
     private void Start() {
 
-        //DieDelegate = die;
         Modstrength();
         Modagility();
         Modinteligence();

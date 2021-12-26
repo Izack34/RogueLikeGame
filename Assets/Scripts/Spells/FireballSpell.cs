@@ -8,17 +8,15 @@ public class FireballSpell : MonoBehaviour
     private int ProjectileSpeed = 10;
 
     private void Start() {
-        Destroy(gameObject,8f);
+        Destroy(gameObject, 8f);
     }
     
     public void SetDamage(int dmg){
         Damage = dmg;
-
     }
 
     void Update()
     {
-        
         transform.Translate(Vector3.forward * ProjectileSpeed * Time.deltaTime);
     } 
 

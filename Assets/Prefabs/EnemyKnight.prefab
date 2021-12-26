@@ -260,10 +260,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4971334
-  m_Height: 1.8800979
+  m_Radius: 0.6081317
+  m_Height: 2.032844
   m_Direction: 1
-  m_Center: {x: -0.033012033, y: 0.73854065, z: -0.07651234}
+  m_Center: {x: -0.035842896, y: 0.81491375, z: -0.069193244}
 --- !u!114 &6754544879315158271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   crit_chance: 25
   max_mana: 300
   mana_points: 0
-  armor: 200
+  armor: 120
   Fire_resistance: 30
   Frost_resistance: 30
   Lightning_resistance: 30
@@ -294,6 +294,8 @@ MonoBehaviour:
   strength: 100
   agility: 100
   inteligence: 100
+  AAspeed: 0
+  Castspeed: 0
 --- !u!114 &745774359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +330,7 @@ MonoBehaviour:
   patrol_rad_Min: 20
   patrol_rad_Max: 60
   patrol_for_this_Time: 15
+  Mrenderer: {fileID: 5077938938056737802}
   wait_Before_Attack: 1
 --- !u!114 &2049729214
 MonoBehaviour:
@@ -1259,5 +1262,10 @@ Transform:
 --- !u!95 &5077938938052541130 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
+  m_PrefabInstance: {fileID: 5077938938043043754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5077938938056737802 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 13700000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
   m_PrefabInstance: {fileID: 5077938938043043754}
   m_PrefabAsset: {fileID: 0}

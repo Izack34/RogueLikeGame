@@ -28,9 +28,10 @@ public class EnemyController : MonoBehaviour
     public float patrol_for_this_Time = 15f;
     protected private float patrol_Timer;
 
+    public Renderer Mrenderer;
     public float wait_Before_Attack = 2f;
     protected private float attack_Timer;
-
+    protected private Color emmisionColor = new Color(0.3f, 0.04f, 0.04f, 1f);
     protected private StatisticsController Statistics;
     protected private bool DuringAttack = false;
     protected private Transform target;
@@ -172,10 +173,12 @@ public class EnemyController : MonoBehaviour
     public void OnMouseOver()
     {
         Gui.ShowEnemyHP(Statistics);
+        Mrenderer.material.SetColor("_EmissionColor", emmisionColor);
     }
 
     public void OnMouseExit()
     {
         Gui.EndShowEnemyHP();
+        Mrenderer.material.SetColor("_EmissionColor", Color.black);
     }
 }

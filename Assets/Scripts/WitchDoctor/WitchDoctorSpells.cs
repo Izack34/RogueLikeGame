@@ -20,8 +20,7 @@ public class WitchDoctorSpells : MonoBehaviour
         
         Instantiate(FireballPrefab, ProjectileTransform.position, ProjectileTransform.rotation);
         
-        
+        FireballPrefab.GetComponent<FireballSpell>().SetDamage(80*(Statistics.inteligence/100));
         Statistics.mana_use(20);
-        //Destroy(Rev_effect,3f);
     }
 }

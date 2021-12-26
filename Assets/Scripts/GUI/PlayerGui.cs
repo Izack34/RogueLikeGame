@@ -28,13 +28,17 @@ public class PlayerGui : MonoBehaviour
     [SerializeField]
     private Image SkillEimage;
     private StatisticsController EnemyStats;
-
     private TooltipUpdate TTupdate;
+    public Texture2D cursorTexture;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
+    
 
     private void Start() {
         TTupdate = GetComponent<TooltipUpdate>();
         GameObject Player = GameObject.FindWithTag("Player");
         Statistics = Player.GetComponent<StatisticsController>();
+        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
     }
     
     void Update()

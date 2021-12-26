@@ -554,7 +554,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: arthur_attack_01
-  m_Speed: 1
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8959695120549979126}
@@ -609,7 +609,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spell1
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2589117921850651667}
@@ -690,7 +690,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: cba7e20228e9a47448487af66cae7413, type: 2}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: AASpeed
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -702,7 +702,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spell2
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6297733517762700017}
@@ -1009,7 +1009,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Spell3
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3994988834405967443}
